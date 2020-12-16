@@ -14,6 +14,7 @@ exports.create = (req, res) => {
         username: req.body.username,
         userlevel: req.body.userlevel,
         name: req.body.name,
+        password: req.body.password,
         attempts: req.body.attempts,
         autologout: req.body.autologout,
         expiry: req.body.expiry,
@@ -35,8 +36,8 @@ exports.create = (req, res) => {
 
 // Retrieve all Users from the database.
 exports.findAll = (req, res) => {
-    const title = req.query.title;
-    var condition = title ? { title: { $regex: new RegExp(title), $options: "i" } } : {};
+    const username = req.query.username;
+    var condition = username ? { username: { $regex: new RegExp(username), $options: "i" } } : {};
 
     User.find(condition)
         .then(data => {

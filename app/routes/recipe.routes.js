@@ -6,8 +6,8 @@ module.exports = app => {
     // Create a new Tutorial
     router.post("/", recipe.create);
 
-    // // Retrieve all recipe
-    // router.get("/", recipe.findAll);
+    // Retrieve all recipe
+    router.get("/", recipe.findAll);
 
     // // Retrieve all published recipe
     // router.get("/published", recipe.findAllPublished);
@@ -15,11 +15,11 @@ module.exports = app => {
     // // Retrieve a single Tutorial with id
     // router.get("/:id", recipe.findOne);
 
-    // // Update a Tutorial with id
-    // router.put("/:id", recipe.update);
+    // Update a Tutorial with id
+    router.put("/:id", recipe.update);
 
-    // // Delete a Tutorial with id
-    // router.delete("/:id", recipe.delete);
+    // Delete a Tutorial with id
+    router.delete("/:id", recipe.delete);
 
     // // Create a new Tutorial
     // router.delete("/", recipe.deleteAll);
